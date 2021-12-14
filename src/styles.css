@@ -1,0 +1,83 @@
+.container {
+  text-align: center;
+  font-family: "Lobster", cursive;
+  background: radial-gradient(
+    circle at -8.9% 51.2%,
+    rgb(255, 124, 0) 0%,
+    rgb(255, 124, 0) 15.9%,
+    rgb(255, 163, 77) 15.9%,
+    rgb(255, 163, 77) 24.4%,
+    rgb(249, 249, 250) 24.5%,
+    rgb(249, 251, 252) 66%
+  );
+  color: #ff7c00;
+}
+h1,
+h2 {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+h1 {
+  font-weight: 750;
+  font-size: 40px;
+}
+h2 {
+  font-size: x-large;
+  padding-right: 400px;
+}
+input {
+  padding: 10px;
+  width: 350px;
+  border-color: #ff7c00;
+}
+.searchButton,
+.currentWeatherButton {
+  padding: 7px;
+  width: 100px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #ab5300;
+  background-color: #ffa34d;
+  border-color: #ff7c00;
+  cursor: pointer;
+  transition: all 200ms ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.searchButton:hover {
+  background-color: #ab5300;
+  color: #ffa34d;
+}
+.currentWeatherButton:hover {
+  background-color: #ab5300;
+  color: #ffa34d;
+}
+img {
+  width: 130px;
+}
+.weather-image {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+}
+.current-temperature {
+  position: relative;
+  padding-left: 170px;
+  font-size: 40px;
+}
+.link {
+  color: #ff7c00;
+}
+.temperature-info {
+  position: relative;
+  padding-right: 280px;
+  font-size: 20px;
+}
+
+.five-day-forecast {
+  font-size: 20px;
+  padding-top: 30px;
+  padding-left: 90px;
+}
+.five-day-forecast img {
+  width: 50px;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>What's the weather like?</h1>
+      <form id="search-form">
+        <input
+          type="text"
+          placeholder="Enter the name of the city"
+          id="city-name"
+        />
+        <input
+          type="submit"
+          value="Search"
+          class="searchButton"
+          id="searchCityButton"
+        />
+        <input
+          type="submit"
+          value="Current"
+          class="currentWeatherButton"
+          id="currentButton"
+        />
+      </form>
+      <h2>Today is...</h2>
+
+      <div class="row">
+        <div class="col-6 current-temperature">
+          <span id="temperature"></span>
+          <span><a href="" class="link" id="celcius"></a></span>
+          <span><a href="" class="link" id="farenheit"> </a></span>
+        </div>
+
+        <div class="col-6 temperature-info">
+          <div class="col" id="description">Description</div>
+          <div class="col" id="humidity">Humidity</div>
+        </div>
+      </div>
+
+      <div class="five-day-forecast">
+        <div class="row">
+          <div class="col">Mon</div>
+          <div class="col">Tue</div>
+          <div class="col">Wed</div>
+          <div class="col">Thu</div>
+          <div class="col">Fri</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img src="Images/sunlargecloud.png" alt="sunlargecloud" />
+          </div>
+          <div class="col">
+            <img src="Images/sun.png" alt="sun" />
+          </div>
+          <div class="col">
+            <img src="Images/cloudwithlightning.png" alt="cloudwithlightning" />
+          </div>
+          <div class="col">
+            <img src="Images/cloud.png" alt="cloud" />
+          </div>
+          <div class="col">
+            <img
+              src="Images/sunbehindsmallcloud.png"
+              alt="sunbehindsmallcloud"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">9 °C / 1°C</div>
+          <div class="col">13 °C / 4°C</div>
+          <div class="col">14 °C / 4°C</div>
+          <div class="col">16 °C / 3°C</div>
+          <div class="col">16 °C / 4°C</div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
