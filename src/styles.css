@@ -10,10 +10,10 @@
     rgb(249, 249, 250) 24.5%,
     rgb(249, 251, 252) 66%
   );
-  color: #ff7c00;
+  color: #ab5300;
 }
 h1,
-h2 {
+.topInfo {
   padding-top: 20px;
   padding-bottom: 30px;
 }
@@ -22,9 +22,10 @@ h1 {
   font-size: 40px;
   text-transform: capitalize;
 }
-h2 {
+.topInfo {
   font-size: x-large;
   padding-right: 420px;
+  text-transform: capitalize;
 }
 input {
   padding: 10px;
@@ -52,27 +53,22 @@ input {
   background-color: #ab5300;
   color: #ffa34d;
 }
-img {
-  width: 130px;
-}
-.weather-image {
-  display: block;
-  position: relative;
-  padding-left: 50px;
-}
+
 .current-temperature {
-  position: relative;
-  padding-left: 170px;
-  font-size: 40px;
+  font-size: 60px;
 }
-.link {
-  color: #ff7c00;
-}
+
 .temperature-info {
   position: relative;
-  padding-right: 280px;
+  padding-top: 40px;
+  padding-left: 190px;
+  padding-right: 190px;
   font-size: 20px;
   text-transform: capitalize;
+}
+.description {
+  position: relative;
+  padding-right: 500px;
 }
 
 .five-day-forecast {

@@ -42,18 +42,24 @@
           id="currentButton"
         />
       </form>
-      <h2>Today is...</h2>
+      <ul class="topInfo">
+        <li class="currentTime"></li>
+      </ul>
 
-      <div class="row">
-        <div class="col-6 current-temperature">
-          <span id="temperature"></span>
-          <span><a href="" class="link" id="celcius"></a></span>
-          <span><a href="" class="link" id="farenheit"> </a></span>
-        </div>
+      <div class="current-temperature">
+        <span id="temperature"></span>
+        <span><a href="" class="link" id="celcius"></a></span>
+        <span><a href="" class="link" id="farenheit"> </a></span>
+      </div>
 
-        <div class="col-6 temperature-info">
-          <div class="col" id="description">Description</div>
-          <div class="col" id="humidity">Humidity</div>
+      <div class="temperature-info">
+        <div class="row">
+          <div class="col-3" class="lowHighTemp">
+            <span id="highTemp"></span>
+            <span id="lowTemp"></span>
+          </div>
+          <div class="col-6" class="description" id="description"></div>
+          <div class="col-3" class="humidity" id="humidity">Humidity</div>
         </div>
       </div>
 

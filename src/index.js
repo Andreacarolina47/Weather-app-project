@@ -1,7 +1,9 @@
 let now = new Date();
-let time = document.querySelector("h2");
+let time = document.querySelector(".currentTime");
 let hour = now.getHours();
-let minutes = now.getMinutes();
+let AmOrPm = hour >= 12 ? "pm" : "am";
+let currentHour = hour % 12 || 12;
+let minutes = String(now.getMinutes()).padStart(2, "0");
 let days = [
   "Sunday",
   "Monday",
@@ -12,22 +14,28 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-time.innerHTML = `${day}, ${hour}:${minutes}`;
+time.innerHTML = `${day}, ${currentHour}:${minutes} ${AmOrPm}`;
 
 function showTemperature(response) {
   let name = response.data.name;
   let temperature = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].description;
+  let description = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempMin = Math.round(response.data.main.temp_min);
 
   let currentTemperature = document.querySelector("#temperature");
   let weatherDescription = document.querySelector("#description");
   let currentHumidity = document.querySelector("#humidity");
+  let highestTemp = document.querySelector("#highTemp");
+  let lowestTemp = document.querySelector("#lowTemp");
   let currentName = document.querySelector("h1");
 
   currentTemperature.innerHTML = `${temperature} °C`;
   weatherDescription.innerHTML = `${description}`;
   currentHumidity.innerHTML = `Humidity:${humidity}%`;
+  highestTemp.innerHTML = `${tempMax} ° |`;
+  lowestTemp.innerHTML = `${tempMin} °`;
   currentName.innerHTML = `${name}`;
 }
 
@@ -48,14 +56,20 @@ currentWeather.addEventListener("click", showCurrent);
 
 function showInformation(response) {
   let temperature = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].description;
+  let description = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempMin = Math.round(response.data.main.temp_min);
   let currentTemperature = document.querySelector("#temperature");
   let weatherDescription = document.querySelector("#description");
   let currentHumidity = document.querySelector("#humidity");
+  let highestTemp = document.querySelector("#highTemp");
+  let lowestTemp = document.querySelector("#lowTemp");
   currentTemperature.innerHTML = `${temperature} °C`;
   weatherDescription.innerHTML = `${description}`;
   currentHumidity.innerHTML = `Humidity:${humidity}%`;
+  highestTemp.innerHTML = `${tempMax} ° |`;
+  lowestTemp.innerHTML = `${tempMin} °`;
 }
 function searchingCity(event) {
   event.preventDefault();
