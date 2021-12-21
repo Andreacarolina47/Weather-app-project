@@ -1,7 +1,7 @@
 .container {
   text-align: center;
-  font-family: "Lobster", cursive;
-  background: rgb(249, 251, 252);
+  font-family: "Acme", sans-serif;
+  background: rgb(255, 255, 255);
   color: #ab5300;
   max-width: 700px;
   margin: 0, auto;
@@ -11,17 +11,21 @@
 }
 h1,
 h2 {
-  padding-top: 10px;
   padding-bottom: 30px;
 }
+
 h1 {
+  padding-top: 10px;
   font-weight: 600;
   font-size: 40px;
   text-transform: capitalize;
 }
 h2 {
-  font-size: x-large;
-  padding-right: 390px;
+  font-size: 20px;
+  padding-right: 320px;
+  padding-top: 20px;
+}
+h2::first-letter {
   text-transform: capitalize;
 }
 input {
@@ -65,17 +69,18 @@ input {
   color: #ab5300;
 }
 
+.currentWeatherIcon {
+  position: relative;
+  top: -22px;
+}
+
 .temperature-info {
   position: relative;
   padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 20px;
   text-transform: capitalize;
-}
-.description {
-  position: relative;
-  padding-right: 500px;
 }
 
 .five-day-forecast {
@@ -88,7 +93,7 @@ input {
 }
 footer,
 .source-link {
-  font-family: "Lobster", cursive;
+  font-family: "Acme", sans-serif;
   color: #ab5300;
   padding-top: 10px;
   text-align: center;

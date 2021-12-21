@@ -14,7 +14,7 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-time.innerHTML = `${day}, ${currentHour}:${minutes} ${AmOrPm}`;
+time.innerHTML = `Last updated: ${day}, ${currentHour}:${minutes} ${AmOrPm}`;
 
 function showTemperature(response) {
   let name = response.data.name;
@@ -32,6 +32,7 @@ function showTemperature(response) {
   let highestTemp = document.querySelector("#highTemp");
   let lowestTemp = document.querySelector("#lowTemp");
   let currentName = document.querySelector("h1");
+  let icon = document.querySelector("#weatherIcon");
 
   currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
@@ -40,6 +41,10 @@ function showTemperature(response) {
   highestTemp.innerHTML = `${tempMax} ° |`;
   lowestTemp.innerHTML = `${tempMin} °`;
   currentName.innerHTML = `${name}`;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function retrievePosition(position) {
@@ -73,6 +78,7 @@ function showInformation(response) {
   let currentWindSpeed = document.querySelector("#wind");
   let highestTemp = document.querySelector("#highTemp");
   let lowestTemp = document.querySelector("#lowTemp");
+  let icon = document.querySelector("#weatherIcon");
 
   currentName.innerHTML = `${name}`;
   currentTemperature.innerHTML = `${temperature}`;
@@ -81,6 +87,10 @@ function showInformation(response) {
   currentWindSpeed.innerHTML = `Wind: ${wind} km/h`;
   highestTemp.innerHTML = `${tempMax} ° |`;
   lowestTemp.innerHTML = `${tempMin} °`;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function searchingCity(event) {
   event.preventDefault();

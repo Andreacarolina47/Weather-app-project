@@ -15,14 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <h1>What's the weather like?</h1>
+      <h1>The weather app</h1>
       <form id="search-form">
         <input
           type="text"
@@ -46,6 +46,7 @@
       <h2 class="currentTime"></h2>
 
       <div class="current-temperature">
+        <span> <img src="" id="weatherIcon" class="currentWeatherIcon" /></span>
         <span id="temperature"></span>
         <span class="units"
           >°C |<a href="" class="farenheit" id="farenheit"> °F</a></span
@@ -66,38 +67,35 @@
 
       <div class="five-day-forecast">
         <div class="row">
-          <div class="col">Mon</div>
-          <div class="col">Tue</div>
-          <div class="col">Wed</div>
-          <div class="col">Thu</div>
-          <div class="col">Fri</div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
         </div>
         <div class="row">
           <div class="col">
-            <img src="Images/sunlargecloud.png" alt="sunlargecloud" />
+            <img src="" alt="" />
           </div>
           <div class="col">
-            <img src="Images/sun.png" alt="sun" />
+            <img src="" alt="" />
           </div>
           <div class="col">
-            <img src="Images/cloudwithlightning.png" alt="cloudwithlightning" />
+            <img src="" alt="" />
           </div>
           <div class="col">
-            <img src="Images/cloud.png" alt="cloud" />
+            <img src="" alt="" />
           </div>
           <div class="col">
-            <img
-              src="Images/sunbehindsmallcloud.png"
-              alt="sunbehindsmallcloud"
-            />
+            <img src="" alt="" />
           </div>
         </div>
         <div class="row">
-          <div class="col">9 °C / 1°C</div>
-          <div class="col">13 °C / 4°C</div>
-          <div class="col">14 °C / 4°C</div>
-          <div class="col">16 °C / 3°C</div>
-          <div class="col">16 °C / 4°C</div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
         </div>
       </div>
     </div>
