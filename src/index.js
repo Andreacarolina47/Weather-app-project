@@ -19,21 +19,24 @@ time.innerHTML = `${day}, ${currentHour}:${minutes} ${AmOrPm}`;
 function showTemperature(response) {
   let name = response.data.name;
   let temperature = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].main;
+  let description = response.data.weather[0].description;
   let humidity = response.data.main.humidity;
+  let wind = Math.round(response.data.wind.speed);
   let tempMax = Math.round(response.data.main.temp_max);
   let tempMin = Math.round(response.data.main.temp_min);
 
   let currentTemperature = document.querySelector("#temperature");
   let weatherDescription = document.querySelector("#description");
   let currentHumidity = document.querySelector("#humidity");
+  let currentWindSpeed = document.querySelector("#wind");
   let highestTemp = document.querySelector("#highTemp");
   let lowestTemp = document.querySelector("#lowTemp");
   let currentName = document.querySelector("h1");
 
   currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
-  currentHumidity.innerHTML = `Humidity:${humidity}%`;
+  currentHumidity.innerHTML = `Humidity: ${humidity}%`;
+  currentWindSpeed.innerHTML = `Wind: ${wind} km/h`;
   highestTemp.innerHTML = `${tempMax} ° |`;
   lowestTemp.innerHTML = `${tempMin} °`;
   currentName.innerHTML = `${name}`;
@@ -55,27 +58,33 @@ let currentWeather = document.querySelector("#currentButton");
 currentWeather.addEventListener("click", showCurrent);
 
 function showInformation(response) {
+  let name = response.data.name;
   let temperature = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].main;
+  let description = response.data.weather[0].description;
   let humidity = response.data.main.humidity;
+  let wind = Math.round(response.data.wind.speed);
   let tempMax = Math.round(response.data.main.temp_max);
   let tempMin = Math.round(response.data.main.temp_min);
+
+  let currentName = document.querySelector("h1");
   let currentTemperature = document.querySelector("#temperature");
   let weatherDescription = document.querySelector("#description");
   let currentHumidity = document.querySelector("#humidity");
+  let currentWindSpeed = document.querySelector("#wind");
   let highestTemp = document.querySelector("#highTemp");
   let lowestTemp = document.querySelector("#lowTemp");
+
+  currentName.innerHTML = `${name}`;
   currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
-  currentHumidity.innerHTML = `Humidity:${humidity}%`;
+  currentHumidity.innerHTML = `Humidity: ${humidity}%`;
+  currentWindSpeed.innerHTML = `Wind: ${wind} km/h`;
   highestTemp.innerHTML = `${tempMax} ° |`;
   lowestTemp.innerHTML = `${tempMin} °`;
 }
 function searchingCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#city-name");
-  let heading = document.querySelector("h1");
-  heading.innerHTML = `${cityName.value}`;
   let apiKey = "02cf53f923b1744f0dbdf803cfd893b1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showInformation);
