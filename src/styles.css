@@ -55,6 +55,16 @@ input {
   font-size: 60px;
 }
 
+.units {
+  position: relative;
+  font-size: 30px;
+  top: -22px;
+}
+.farenheit {
+  text-decoration: none;
+  color: #ab5300;
+}
+
 .temperature-info {
   position: relative;
   padding-top: 40px;

@@ -31,7 +31,7 @@ function showTemperature(response) {
   let lowestTemp = document.querySelector("#lowTemp");
   let currentName = document.querySelector("h1");
 
-  currentTemperature.innerHTML = `${temperature} °C`;
+  currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
   currentHumidity.innerHTML = `Humidity:${humidity}%`;
   highestTemp.innerHTML = `${tempMax} ° |`;
@@ -65,7 +65,7 @@ function showInformation(response) {
   let currentHumidity = document.querySelector("#humidity");
   let highestTemp = document.querySelector("#highTemp");
   let lowestTemp = document.querySelector("#lowTemp");
-  currentTemperature.innerHTML = `${temperature} °C`;
+  currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
   currentHumidity.innerHTML = `Humidity:${humidity}%`;
   highestTemp.innerHTML = `${tempMax} ° |`;
