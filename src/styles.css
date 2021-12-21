@@ -1,20 +1,17 @@
 .container {
   text-align: center;
   font-family: "Lobster", cursive;
-  background: radial-gradient(
-    circle at -8.9% 51.2%,
-    rgb(255, 124, 0) 0%,
-    rgb(255, 124, 0) 15.9%,
-    rgb(255, 163, 77) 15.9%,
-    rgb(255, 163, 77) 24.4%,
-    rgb(249, 249, 250) 24.5%,
-    rgb(249, 251, 252) 66%
-  );
+  background: rgb(249, 251, 252);
   color: #ab5300;
+  max-width: 700px;
+  margin: 0, auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
 }
 h1,
-.topInfo {
-  padding-top: 20px;
+h2 {
+  padding-top: 10px;
   padding-bottom: 30px;
 }
 h1 {
@@ -22,9 +19,9 @@ h1 {
   font-size: 40px;
   text-transform: capitalize;
 }
-.topInfo {
+h2 {
   font-size: x-large;
-  padding-right: 420px;
+  padding-right: 390px;
   text-transform: capitalize;
 }
 input {
@@ -61,8 +58,8 @@ input {
 .temperature-info {
   position: relative;
   padding-top: 40px;
-  padding-left: 190px;
-  padding-right: 190px;
+  padding-left: 120px;
+  padding-right: 120px;
   font-size: 20px;
   text-transform: capitalize;
 }
@@ -75,7 +72,6 @@ input {
   font-size: 20px;
   padding-top: 60px;
   padding-bottom: 20px;
-  padding-left: 100px;
 }
 .five-day-forecast img {
   width: 50px;
@@ -84,6 +80,6 @@ footer,
 .source-link {
   font-family: "Lobster", cursive;
   color: #ab5300;
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
 }
