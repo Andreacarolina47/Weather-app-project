@@ -64,7 +64,8 @@ input {
   font-size: 30px;
   top: -22px;
 }
-.farenheit {
+.fahrenheit,
+.celsius {
   text-decoration: none;
   color: #ab5300;
 }

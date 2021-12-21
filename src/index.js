@@ -70,6 +70,8 @@ function showInformation(response) {
   let tempMax = Math.round(response.data.main.temp_max);
   let tempMin = Math.round(response.data.main.temp_min);
 
+  celsiusTemperature = response.data.main.temp;
+
   let currentName = document.querySelector("h1");
   let currentTemperature = document.querySelector("#temperature");
   let weatherDescription = document.querySelector("#description");
@@ -115,5 +117,25 @@ function searchingCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showInformation);
 }
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let currentTemperature = document.querySelector("#temperature");
+  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#temperature");
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let search = document.querySelector("#search-form");
 search.addEventListener("click", searchingCity);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
