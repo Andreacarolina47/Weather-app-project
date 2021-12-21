@@ -1,21 +1,3 @@
-let now = new Date();
-let time = document.querySelector(".currentTime");
-let hour = now.getHours();
-let AmOrPm = hour >= 12 ? "pm" : "am";
-let currentHour = hour % 12 || 12;
-let minutes = String(now.getMinutes()).padStart(2, "0");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-time.innerHTML = `Last updated: ${day}, ${currentHour}:${minutes} ${AmOrPm}`;
-
 function showTemperature(response) {
   let name = response.data.name;
   let temperature = Math.round(response.data.main.temp);
@@ -45,6 +27,23 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let now = new Date();
+  let time = document.querySelector(".currentTime");
+  let hour = now.getHours();
+  let AmOrPm = hour >= 12 ? "pm" : "am";
+  let currentHour = hour % 12 || 12;
+  let minutes = String(now.getMinutes()).padStart(2, "0");
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  time.innerHTML = `Last updated: ${day}, ${currentHour}:${minutes} ${AmOrPm}`;
 }
 
 function retrievePosition(position) {
@@ -91,6 +90,23 @@ function showInformation(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let now = new Date();
+  let time = document.querySelector(".currentTime");
+  let hour = now.getHours();
+  let AmOrPm = hour >= 12 ? "pm" : "am";
+  let currentHour = hour % 12 || 12;
+  let minutes = String(now.getMinutes()).padStart(2, "0");
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  time.innerHTML = `Last updated: ${day}, ${currentHour}:${minutes} ${AmOrPm}`;
 }
 function searchingCity(event) {
   event.preventDefault();
