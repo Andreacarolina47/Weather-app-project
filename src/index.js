@@ -110,13 +110,18 @@ function showInformation(response) {
   let day = days[now.getDay()];
   time.innerHTML = `Last updated: ${day}, ${currentHour}:${minutes} ${AmOrPm}`;
 }
-function searchingCity(event) {
-  event.preventDefault();
-  let cityName = document.querySelector("#city-name");
+function search(city) {
   let apiKey = "02cf53f923b1744f0dbdf803cfd893b1";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showInformation);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityName = document.querySelector("#city-name");
+  search(cityName.value);
+}
+search("Barcelona");
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
@@ -131,11 +136,13 @@ function showCelsiusTemp(event) {
 }
 let celsiusTemperature = null;
 
-let search = document.querySelector("#search-form");
-search.addEventListener("click", searchingCity);
+let form = document.querySelector("#search-form");
+form.addEventListener("click", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+searchingCity(barcelona);
