@@ -2,12 +2,14 @@
   text-align: center;
   font-family: "Acme", sans-serif;
   background: rgb(255, 255, 255);
-  color: #ab5300;
+  color: #111;
   max-width: 700px;
   margin: 0, auto;
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background-image: url("../Images/sky.jpg");
+  background-size: 700px 600px;
 }
 h1,
 h2 {
@@ -31,7 +33,7 @@ h2::first-letter {
 input {
   padding: 10px;
   width: 350px;
-  border-color: #ff7c00;
+  border-color: #a9a4bb;
 }
 .searchButton,
 .currentWeatherButton {
@@ -39,20 +41,20 @@ input {
   width: 100px;
   border-radius: 20px;
   font-size: 20px;
-  color: #ab5300;
-  background-color: #ffa34d;
-  border-color: #ff7c00;
+  color: #111;
+  background-color: #ee694c;
+  border-color: #a9a4bb;
   cursor: pointer;
   transition: all 200ms ease;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .searchButton:hover {
-  background-color: #ab5300;
-  color: #ffa34d;
+  background-color: #111;
+  color: #ee694c;
 }
 .currentWeatherButton:hover {
-  background-color: #ab5300;
-  color: #ffa34d;
+  background-color: #111;
+  color: #ee694c;
 }
 
 .current-temperature {
@@ -67,7 +69,7 @@ input {
 .fahrenheit,
 .celsius {
   text-decoration: none;
-  color: #ab5300;
+  color: #111;
 }
 
 .currentWeatherIcon {
@@ -95,7 +97,7 @@ input {
 footer,
 .source-link {
   font-family: "Acme", sans-serif;
-  color: #ab5300;
+  color: #111;
   padding-top: 10px;
   text-align: center;
 }
