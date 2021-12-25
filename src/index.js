@@ -123,7 +123,6 @@ function handleSubmit(event) {
   let cityName = document.querySelector("#city-name");
   search(cityName.value);
 }
-search("Barcelona");
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
@@ -151,6 +150,29 @@ function showCelsiusTemp(event) {
   lowestTemp.innerHTML = `${Math.round(lowestCelsiusTemperature)}° `;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tues", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-day">Sun</div>
+            <img src="images/sunbehindsmallcloud.png" alt="">
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-maxtemp">18°|</span>
+              <span class="weather-forecast-mintemp">15°</span>
+            </div>
+          </div>
+          
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let celsiusTemperature = null;
 let highestCelsiusTemperature = null;
 let lowestCelsiusTemperature = null;
@@ -164,4 +186,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
-searchingCity(barcelona);
+search("Barcelona");
+showForecast();
