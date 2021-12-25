@@ -159,7 +159,7 @@ function showForecast() {
       forecastHTML +
       `
           <div class="col-2">
-            <div class="weather-forecast-day">Sun</div>
+            <div class="weather-forecast-day">${day}</div>
             <img src="images/sunbehindsmallcloud.png" alt="">
             <div class="weather-forecast-temperatures">
               <span class="weather-forecast-maxtemp">18°|</span>
