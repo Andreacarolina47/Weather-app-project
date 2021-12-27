@@ -66,8 +66,6 @@ function showInformation(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
 
-  celsiusTemperature = response.data.main.temp;
-
   let currentName = document.querySelector("h1");
   let currentTemperature = document.querySelector("#temperature");
   let weatherDescription = document.querySelector("#description");
@@ -116,18 +114,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityName = document.querySelector("#city-name");
   search(cityName.value);
-}
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
-}
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 function getForecast(coordinates) {
@@ -223,15 +209,7 @@ function showCurrentForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("click", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("Barcelona");
