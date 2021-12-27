@@ -16,7 +16,7 @@ function showTemperature(response) {
   currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
   currentHumidity.innerHTML = `Humidity: ${humidity}%`;
-  currentWindSpeed.innerHTML = `Wind: ${wind} km/h`;
+  currentWindSpeed.innerHTML = `Wind: ${wind} m/s`;
 
   currentName.innerHTML = `${name}`;
   icon.setAttribute(
@@ -78,7 +78,7 @@ function showInformation(response) {
   currentTemperature.innerHTML = `${temperature}`;
   weatherDescription.innerHTML = `${description}`;
   currentHumidity.innerHTML = `Humidity: ${humidity}%`;
-  currentWindSpeed.innerHTML = `Wind: ${wind} km/h`;
+  currentWindSpeed.innerHTML = `Wind: ${wind} m/s`;
 
   icon.setAttribute(
     "src",

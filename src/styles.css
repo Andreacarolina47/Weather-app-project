@@ -1,15 +1,20 @@
+body {
+  background-image: url("../images/fallleaves.jpg");
+  background-size: 1300px 800px;
+}
+
 .container {
   text-align: center;
   font-family: "Acme", sans-serif;
-  background: rgb(255, 255, 255);
+  background: #fcf2c4;
   color: #111;
   max-width: 700px;
   margin: 0, auto;
+  margin-top: 40px;
   padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 5px;
-  background-image: url("../Images/sky.jpg");
-  background-size: 700px 700px;
+  border: 1px solid #dc6217;
+  border-radius: 10px;
+  border-width: 10px;
 }
 h1,
 h2 {
@@ -24,7 +29,7 @@ h1 {
 }
 h2 {
   font-size: 20px;
-  padding-right: 290px;
+  padding-right: 315px;
   padding-top: 20px;
 }
 h2::first-letter {
@@ -33,7 +38,7 @@ h2::first-letter {
 input {
   padding: 10px;
   width: 350px;
-  border-color: #a9a4bb;
+  border-color: #111;
 }
 .searchButton,
 .currentWeatherButton {
@@ -42,19 +47,19 @@ input {
   border-radius: 20px;
   font-size: 20px;
   color: #111;
-  background-color: #ee694c;
-  border-color: #a9a4bb;
+  background-color: #dc6217;
+  border-color: #111;
   cursor: pointer;
   transition: all 200ms ease;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .searchButton:hover {
   background-color: #111;
-  color: #ee694c;
+  color: #dc6217;
 }
 .currentWeatherButton:hover {
   background-color: #111;
-  color: #ee694c;
+  color: #dc6217;
 }
 
 .current-temperature {
@@ -92,7 +97,7 @@ input {
 footer,
 .source-link {
   font-family: "Acme", sans-serif;
-  color: #111;
+  color: #fff;
   padding-top: 10px;
   text-align: center;
 }
