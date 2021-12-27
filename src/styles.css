@@ -1,6 +1,7 @@
 body {
   background-image: url("../images/fallleaves.jpg");
   background-size: 1300px 800px;
+  background-repeat: no-repeat;
 }
 
 .container {
