@@ -44,6 +44,8 @@ function showTemperature(response) {
   ];
   let day = days[now.getDay()];
   time.innerHTML = `Last updated: ${day}, ${currentHour}:${minutes} ${AmOrPm}`;
+
+  getCurrentForecast(response.data.coord);
 }
 
 function retrievePosition(position) {
@@ -158,6 +160,53 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(showForecast);
 }
 function showForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+  }
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+          <div class="col-2">
+            <div class="weather-forecast-day">${formatDay(forecastDay.dt)}</div>
+            <img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="">
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-maxtemp">${Math.round(
+                forecastDay.temp.max
+              )}°|</span>
+              <span class="weather-forecast-mintemp">${Math.round(
+                forecastDay.temp.min
+              )}°</span>
+            </div>
+          </div>
+          
+        `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getCurrentForecast(coordinates) {
+  let apiKey = "02cf53f923b1744f0dbdf803cfd893b1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showCurrentForecast);
+}
+
+function showCurrentForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
